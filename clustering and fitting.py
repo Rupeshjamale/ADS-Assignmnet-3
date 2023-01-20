@@ -335,3 +335,26 @@ plt.xlabel('Years')
 plt.ylabel('Population, total ')
 plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.show()
+
+
+df, df2 = get_data_frames('API_19_DS2_en_csv_v2_4773766.csv',countries
+                             ,'SP.URB.TOTL.IN.ZS')
+num= np.arange(5)
+width= 0.2
+# Select specific years data 
+df2 = df2.loc[df2['Years'].isin(['2017','2018','2019','2020','2021'])]
+years = df2['Years'].tolist() 
+
+#Ploting data on bar chart  
+plt.figure(dpi=144)
+plt.title('Population, total ')
+plt.bar(num,df2['United Kingdom'], width, label='United Kingdom')
+plt.bar(num+0.2, df2['Australia'], width, label='Australia')
+plt.bar(num-0.2, df2['United States'], width, label='United States')
+plt.bar(num-0.4, df2['China'], width, label='China')
+plt.xticks(num, years)
+plt.xlabel('Years')
+plt.ylabel('Urban population (% of total population) ')
+plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+plt.show()
+
