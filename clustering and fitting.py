@@ -347,7 +347,7 @@ years = df2['Years'].tolist()
 
 #Ploting data on bar chart  
 plt.figure(dpi=144)
-plt.title('Population, total ')
+plt.title('Urban population (% of total population) ')
 plt.bar(num,df2['United Kingdom'], width, label='United Kingdom')
 plt.bar(num+0.2, df2['Australia'], width, label='Australia')
 plt.bar(num-0.2, df2['United States'], width, label='United States')
